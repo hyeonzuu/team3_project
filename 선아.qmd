@@ -34,9 +34,7 @@ tour_2021.rename(columns=rename_dict, inplace=True)
 tour_2022.rename(columns=rename_dict, inplace=True)
 
 ```
-
 ### 여행 목적에 맞지 않는 장소 제거
-
 ```{python}
 # 'cate_remove' 목록 정의
 cate_remove = ['교통시설', '면세점', '백화점', '쇼핑몰', '대형마트', '기타쇼핑시설']
