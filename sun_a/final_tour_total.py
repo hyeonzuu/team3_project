@@ -73,3 +73,6 @@ plt.show()
 
  tour_total.query('category_m == "문화관광"')
  
+# 결과
+# 2018~2022년 관광지 Top 3 구하기
+# 상위 3개 
