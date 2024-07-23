@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>이삭토스트 맛있조</title>
+<title>이삭토스트 맛있조 - 지역별 관광지 검색순위</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">이삭토스트 맛있조</h1>
+<h1 class="title">지역별 관광지 검색순위</h1>
 </div>
 
 
@@ -213,7 +213,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="한계-1-자동차-이용-방문자의-이동행태이므로-전체-방문자-특성-반영-안됨.">한계 1: 자동차 이용 방문자의 이동행태이므로 전체 방문자 특성 반영 안됨.</h2>
 <section id="section" class="level3">
 <h3 class="anchored" data-anchor-id="section">&lt;전처리&gt;</h3>
-<div id="133c3529" class="cell" data-execution_count="1">
+<div id="229ede97" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 데이터 로드</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -221,7 +221,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="데이터-불러오기-및-열-이름-변경" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-불러오기-및-열-이름-변경">데이터 불러오기 및 열 이름 변경</h3>
-<div id="a779ffab" class="cell" data-execution_count="2">
+<div id="49fdbb37" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tour_2018 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2018.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>tour_2019 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2019.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>tour_2020 <span class="op">=</span> pd.read_csv(<span class="st">'data/ranking_2020.csv'</span>, encoding<span class="op">=</span><span class="st">'cp949'</span>)</span>
@@ -240,7 +240,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="여행-목적에-맞지-않는-장소-제거" class="level3">
 <h3 class="anchored" data-anchor-id="여행-목적에-맞지-않는-장소-제거">여행 목적에 맞지 않는 장소 제거</h3>
-<div id="d2fe96de" class="cell" data-execution_count="3">
+<div id="f24d42b0" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'cate_remove' 목록 정의</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>cate_remove <span class="op">=</span> [<span class="st">'교통시설'</span>, <span class="st">'면세점'</span>, <span class="st">'백화점'</span>, <span class="st">'쇼핑몰'</span>, <span class="st">'대형마트'</span>, <span class="st">'기타쇼핑시설'</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -254,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="각-데이터프레임에-연도-열-추가" class="level3">
 <h3 class="anchored" data-anchor-id="각-데이터프레임에-연도-열-추가">각 데이터프레임에 연도 열 추가</h3>
-<div id="a15196c0" class="cell" data-execution_count="4">
+<div id="9c082d8b" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tour_2018[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2018</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>tour_2019[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2019</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>tour_2020[<span class="st">'year'</span>] <span class="op">=</span> <span class="dv">2020</span></span>
@@ -264,17 +264,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="데이터-결합---연도-통합하기" class="level3">
 <h3 class="anchored" data-anchor-id="데이터-결합---연도-통합하기">데이터 결합 -&gt; 연도 통합하기</h3>
-<div id="b05dfc6e" class="cell" data-execution_count="5">
+<div id="b7703570" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tours <span class="op">=</span> [tour_2018, tour_2019, tour_2020, tour_2021, tour_2022]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>tour_total <span class="op">=</span> pd.concat(tours, ignore_index<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="불필요한-열-삭제---도로명-주소-기존-순위-제거" class="level3">
 <h3 class="anchored" data-anchor-id="불필요한-열-삭제---도로명-주소-기존-순위-제거">불필요한 열 삭제 -&gt; 도로명 주소, 기존 순위 제거</h3>
-<div id="3895b0df" class="cell" data-execution_count="6">
+<div id="c16c7fff" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tour_total.drop(columns<span class="op">=</span>[<span class="st">'address'</span>, <span class="st">'ranking'</span>], inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="5cfe9fec" class="cell" data-execution_count="7">
+<div id="2d603217" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'combined_city' 열 추가 (명칭 혼선이 있을 가능성 존재하므로 구체적인 지역을 나타내는 열 추가)</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tour_total[<span class="st">'combined_city'</span>] <span class="op">=</span> tour_total[<span class="st">'state'</span>] <span class="op">+</span> <span class="st">" "</span> <span class="op">+</span> tour_total[<span class="st">'city'</span>]</span>
@@ -315,7 +315,7 @@ memory usage: 85.9+ KB
 4     서울특별시 용산구  </code></pre>
 </div>
 </div>
-<div id="c8d94618" class="cell" data-execution_count="8">
+<div id="2854f021" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib <span class="im">as</span> plt</span>
@@ -329,11 +329,11 @@ memory usage: 85.9+ KB
 <span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'font.family'</span>] <span class="op">=</span><span class="st">'Malgun Gothic'</span></span>
 <span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>plt.rcParams[<span class="st">'axes.unicode_minus'</span>] <span class="op">=</span><span class="va">False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_14884\2197437013.py:5: DtypeWarning:
+<pre><code>C:\Users\USER\AppData\Local\Temp\ipykernel_9576\2197437013.py:5: DtypeWarning:
 
 Columns (1,2,3,4,5,6,9) have mixed types. Specify dtype option on import or set low_memory=False.
 
-C:\Users\USER\AppData\Local\Temp\ipykernel_14884\2197437013.py:6: DtypeWarning:
+C:\Users\USER\AppData\Local\Temp\ipykernel_9576\2197437013.py:6: DtypeWarning:
 
 Columns (1,2,3,4,5,6,9) have mixed types. Specify dtype option on import or set low_memory=False.
 </code></pre>
@@ -361,7 +361,7 @@ memory usage: 80.0+ MB</code></pre>
 </section>
 <section id="년-관광지-top-3-구하기" class="level3">
 <h3 class="anchored" data-anchor-id="년-관광지-top-3-구하기">2018~2022년 관광지 Top 3 구하기</h3>
-<div id="a5abe1db" class="cell" data-execution_count="9">
+<div id="98c35531" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>tour_total_rank <span class="op">=</span> tour_total.groupby(<span class="st">"spot"</span>)<span class="op">\</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                            .agg(mean <span class="op">=</span> (<span class="st">"search_count"</span>,<span class="st">"mean"</span>))</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        </span>
@@ -400,7 +400,7 @@ memory usage: 80.0+ MB</code></pre>
 </section>
 <section id="관광지-중분류-top3" class="level3">
 <h3 class="anchored" data-anchor-id="관광지-중분류-top3">2018~2022 관광지 중분류 Top3</h3>
-<div id="dee6cf2e" class="cell" data-execution_count="10">
+<div id="cdacb98c" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># tour_total["year"] = tour_total["year"].astype(int)</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Top 3 순위 구하기</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>tour_total_c <span class="op">=</span> tour_total.groupby(<span class="st">"category_m"</span>)<span class="op">\</span></span>
