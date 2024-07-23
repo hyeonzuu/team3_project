@@ -7,8 +7,8 @@ jupyter: python3
 ## 한계 1: 자동차 이용 방문자의 이동행태이므로 전체 방문자 특성 반영 안됨.
 
 ### <전처리>
-### 데이터 로드
 ```{python}
+# 데이터 로드
 import numpy as np
 import pandas as pd
 
@@ -130,7 +130,6 @@ plt.clf()
 ```
 ### 2018~2022 관광지 중분류 Top3
 ```{python}
-
 # tour_total["year"] = tour_total["year"].astype(int)
 # Top 3 순위 구하기
 tour_total_c = tour_total.groupby("category_m")\
